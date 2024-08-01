@@ -2,7 +2,7 @@ group 'com.amir_p.power'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.3.50'
+    ext.kotlin_version = '1.5.20'//'1.3.50' //Changed by Binary Soul
     repositories {
         google()
         jcenter()
@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 34//28 //Changed by Binary Soul
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -35,6 +35,17 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+
+    //Added by Binary Soul
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    //Added by Binary Soul
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
